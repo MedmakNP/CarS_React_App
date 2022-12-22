@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/test123/static/css/main.36cd3785.css",
+    "main.js": "/test123/static/js/main.126b1326.js",
+    "static/js/787.28cb0dcd.chunk.js": "/test123/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Porsche.png": "/test123/static/media/Porsche.2470b878140be3a85df6.png",
+    "static/media/back.jpg": "/test123/static/media/back.28fadee63187f0686819.jpg",
+    "static/media/Custom_back.png": "/test123/static/media/Custom_back.2ec50a7380a7fa5e4795.png",
+    "static/media/THAR.png": "/test123/static/media/THAR.66132b8db72d0bf1e661.png",
+    "static/media/Tata-Nexon.jpg": "/test123/static/media/Tata-Nexon.5a5d41fcf3ab9fbccc3c.jpg",
+    "static/media/range-rover-sport.jpg": "/test123/static/media/range-rover-sport.6acc781d570082fad67e.jpg",
+    "static/media/Mercedes-Benz.jpg": "/test123/static/media/Mercedes-Benz.81c61fe86761342a84a4.jpg",
+    "index.html": "/test123/index.html",
+    "main.36cd3785.css.map": "/test123/static/css/main.36cd3785.css.map",
+    "main.126b1326.js.map": "/test123/static/js/main.126b1326.js.map",
+    "787.28cb0dcd.chunk.js.map": "/test123/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36cd3785.css",
+    "static/js/main.126b1326.js"
+  ]
+}
