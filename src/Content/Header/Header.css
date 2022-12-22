@@ -1,0 +1,50 @@
+.container
+{
+    height:100%;
+    width:100%;
+    max-width: 1440px;
+    margin:0 auto;
+}
+.header{
+  height: 100px;
+  width: 100%;
+  background-color: black;
+
+}
+.logo{
+  width: 50px;
+  height: 50px;
+}
+.header-inner{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 100%;
+}
+.logo-wrap{
+  display: flex;
+  align-items: center;
+}
+.logo-p{
+  padding-left: 15px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 40px;
+  color: white;
+}
+.elem-menu{
+  color: white;
+  padding-right: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+.login-btn{
+  color: white;
+  width: 120px;
+  height: 40px;
+  background: #850000;
+  border-radius: 6px;
+}
