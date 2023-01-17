@@ -1,5 +1,5 @@
 import './Catalog.css'
-import Tabs from './Tabs'
+import Tabs from '../Tabs/Tabs.js'
  
 const Catalog = () =>{
     return(

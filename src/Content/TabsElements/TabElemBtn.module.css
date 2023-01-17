@@ -1,0 +1,21 @@
+.tabs {
+    width: 470px;
+    background: #1C1C1C;
+    border-radius: 13.5px;
+  }
+.title{
+    text-align: start;
+    font-weight: 400;
+    font-size: 25px;
+    font-weight: 400;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+.activeTitle{
+    text-align: start;
+    font-weight: 400;
+    font-size: 25px;
+    font-weight: 400;
+    color: #FFFFFF;
+    opacity: 1;
+}

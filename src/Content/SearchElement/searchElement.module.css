@@ -1,0 +1,27 @@
+.elem{
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+    height: 55px;
+    background: #F3F3F3;
+    border: 1.5px solid #EBEBEB;
+    border-radius: 6.5px;
+}
+.arrow{
+    margin-right: 25px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    transform: rotate(-135deg);
+}
+.text{
+    padding-left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}

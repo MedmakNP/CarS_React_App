@@ -8,18 +8,18 @@
     max-width: 1440px;
     margin:0 auto;
 }
-.title-services{
+.title{
     text-align: center;
     font-style: normal;
     font-weight: 500;
     font-size: 47px;
     line-height: 65px;
 }
-.servise-wrap{
+.wrap{
     display: flex;
     justify-content: space-between;
 }
-.services-elem {
+.elem {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,23 +29,29 @@
     border-radius: 13px;
     
 }
-.service-img{
+.img{
     width: 200px;
     height: 200px;
 }
-.elem1{
+.color1{
     background: #F0F9FF;
 }
-.elem2{
+.color2{
 
     background: #F3FBF4;
 }
-.elem3{
+.color3{
     background: #FFF4F3;
 }
-.servise-text{
+.text{
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
     line-height: 38px;
+}
+
+.elem :hover{
+    width: 250px;
+    height: 250px;
+    transition: 0.3s;
 }

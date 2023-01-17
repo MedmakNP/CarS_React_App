@@ -1,21 +1,21 @@
-import './Header.css'
+import classes from './Header.module.css'
 import logo from '../Images/logo.png'
 const Header = () => {
     return(
-        <div className='header'>
-            <div className='container'>
-                <div className='header-inner'>
-                    <div className='logo-wrap'>
-                        <img src={logo} className='logo' alt='logo' />
-                        <p className='logo-p'>CarS</p>
+        <div className={classes.header}>
+            <div className={classes.container}>
+                <div className={classes.inner}>
+                    <div className={classes.wrap}>
+                        <img src={logo} className={classes.logo} alt='logo' />
+                        <p className={classes.title}>CarS</p>
                     </div>
-                    <div className='hot-bar'>
-                        <a className='elem-menu'>Home</a>
-                        <a className='elem-menu'>About Us</a>
-                        <a className='elem-menu'>Servises</a>
-                        <a className='elem-menu'>Stock</a>
-                        <a className='elem-menu'>Contakt Us</a>
-                        <button className='login-btn'>Login</button>
+                    <div className={classes.hotBar}>
+                        <a className={classes.menu}>Home</a>
+                        <a className={classes.menu}>About Us</a>
+                        <a className={classes.menu}>Servises</a>
+                        <a className={classes.menu}>Stock</a>
+                        <a className={classes.menu}>Contakt Us</a>
+                        <button className={classes.btn}>Login</button>
                     </div>
                 </div>
             </div>   

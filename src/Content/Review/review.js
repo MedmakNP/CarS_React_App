@@ -1,15 +1,16 @@
 import './Review.css'
-
+import Response from './Response';
+import { Carousel } from 'react-responsive-carousel';
 
 const Review = () => {
     return(
         <div className='review'>
             <div className='container'>
-                < Carousel>
-                   <div className=' rev-item '></div>
-                   <div className=' rev-item '></div>
-                   <div className=' rev-item '></div>
-                </Carousel>
+            <Carousel>
+                <div>
+                <Response />
+                </div>
+            </Carousel>
             </div>
         </div>
     );
