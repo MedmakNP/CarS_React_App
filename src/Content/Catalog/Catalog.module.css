@@ -3,7 +3,14 @@
     height: 1200px;
     background: #1C1C1C;
 }
-.title-catalog{
+.container
+{
+    height:100%;
+    width:100%;
+    max-width: 1440px;
+    margin:0 auto;
+}
+.title{
     padding-top: 45px;
     margin-bottom: 30px;
     text-align: center;
@@ -13,7 +20,7 @@
     line-height: 49px;
     color: #FFFFFF;
 } 
-.catalog-text{
+.text{
     margin: auto;
     text-align: center;
     font-style: normal;
@@ -23,6 +30,6 @@
     color: #FFFFFF;
     max-width: 750px;
 }
-.catalog-inner{
+.inner{
   padding-top: 80px;
 }  

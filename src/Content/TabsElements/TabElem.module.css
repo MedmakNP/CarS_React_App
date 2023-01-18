@@ -3,6 +3,10 @@
     background: #1C1C1C;
     border-radius: 13.5px;
   }
+.activeTab  {
+    background: #414141;
+    border-radius: 13.5px;
+  }
 .title{
     text-align: start;
     font-weight: 400;
@@ -18,4 +22,24 @@
     font-weight: 400;
     color: #FFFFFF;
     opacity: 1;
+}
+
+
+
+
+
+
+.content {
+  padding: 20px;
+  width: 915px;
+  height: 815px;
+  display: none;
+}
+.img{
+  width: 915px;
+  height: 815px;
+  border-radius: 13.5px;  
+}
+.activeContent {
+  display: block;
 }

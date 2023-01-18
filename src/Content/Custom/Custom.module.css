@@ -11,24 +11,17 @@
     max-width: 1440px;
     margin:0 auto;
 }
-.title-custom{
+.title{
     text-align: center;
     font-style: normal;
     font-weight: 500;
     font-size: 47px;
     line-height: 65px;
 }
-.wrapper-number{
+.wrapper{
     display: flex;
     justify-content: space-between; 
     padding-top: 100px;
-}
-.icon-text{
-    max-width: 180px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 44px;    
 }
 .n1{
     margin: auto;
@@ -37,11 +30,8 @@
 .n2{
     max-width: 1400px;
 }
-.n3{
-    margin: auto;
-    max-width: 1000px;
-}
-.more-icon{
+
+.moreIcon{
     display: flex;
     justify-content: space-evenly;
     padding: 80px;
