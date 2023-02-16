@@ -41,6 +41,7 @@
   font-size: 18px;
   line-height: 27px;
   opacity: 0.8;
+  margin: auto;
 }
 .btn{
   color: white;
@@ -59,4 +60,8 @@
   background: #5a0000;
   cursor: pointer;
   transition: 0.3s;
+}
+.hotBar{
+  display: flex;
+  justify-content:center ;
 }

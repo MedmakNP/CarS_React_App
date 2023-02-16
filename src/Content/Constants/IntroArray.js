@@ -1,7 +1,7 @@
 let introData = [
-    {text:"Location"},
-    {text:"Brand Name"},
-    {text:"Select Type"},
-    {text:"Select Models"}
+    {texts:"Location"},
+    {texts:"Brand Name"},
+    {texts:"Select Type"},
+    {texts:"Select Models"}
 ]
 export default introData;

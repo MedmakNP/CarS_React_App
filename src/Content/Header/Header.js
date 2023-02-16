@@ -10,11 +10,11 @@ const Header = () => {
                         <p className={classes.title}>CarS</p>
                     </div>
                     <div className={classes.hotBar}>
-                        <a className={classes.menu}>Home</a>
-                        <a className={classes.menu}>About Us</a>
-                        <a className={classes.menu}>Servises</a>
-                        <a className={classes.menu}>Stock</a>
-                        <a className={classes.menu}>Contakt Us</a>
+                        <p className={classes.menu}>Home</p>
+                        <p className={classes.menu}>About Us</p>
+                        <p className={classes.menu}>Servises</p>
+                        <p className={classes.menu}>Stock</p>
+                        <p className={classes.menu}>Contakt Us</p>
                         <button className={classes.btn}>Login</button>
                     </div>
                 </div>
