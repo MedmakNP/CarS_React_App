@@ -9,11 +9,11 @@ function Tabs() {
   return (
     <div className={classes.container}>
       <div className={classes.block}>
-      { tabData.map ((item, index) => < TabButton toggleState = {toggleState} setToggleState = {setToggleState} text = {item.text} id = {item.id} key = {index} />)}  
+      { tabData.map ((item, id) => < TabButton toggleState = {toggleState} setToggleState = {setToggleState} text = {item.text} id = {item.id} key = {id} />)}  
       </div>
 
       <div className={classes.contentTabs}>
-      { tabData.map ((item, index) => < TabContent toggleState = {toggleState} img = {item.img}  text = {item.text} id = {item.id} key = {index} />)}
+      { tabData.map ((item, id) => < TabContent toggleState = {toggleState} img = {item.img}  text = {item.text} id = {item.id} key = {id} />)}
       </div>
     </div>
   );

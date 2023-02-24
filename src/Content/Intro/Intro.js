@@ -23,7 +23,7 @@ class Intro extends Component{
                 <div className={classes.wrap}>
                     <div className={classes.search}>
                         <div className={classes.elemWrap}>
-                        { introData.map ((item, index) => < SearchElement texts = {item.texts} key = {index} />)}
+                        { introData.map ((item, id) => < SearchElement texts = {item.texts} key = {id} />)}
                         <button className={classes.btn}>Search Now</button> 
                         </div>                       
                     </div>
