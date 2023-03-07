@@ -1,6 +1,6 @@
 import classes from "./Table.module.css"
 import TableData from '../Constants/TableArray';
-import TableInner from './TableInner';
+import TableInner from './TableWiew';
 import { Component } from "react";
 import TableDataAdd from "../Constants/TableArrayAdd";
 

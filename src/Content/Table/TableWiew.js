@@ -33,14 +33,14 @@ class TableInner extends Component {
     const { tableDataArr } = this.state;
     const newDeleteArr = [...tableDataArr];
     newDeleteArr.splice(index, 1);
-    this.setState({ tableDataArr: newDeleteArr });
+    this.setState({ tableDataArr: newDeleteArr }, this.updateTable);
   }
   handleAdd = () =>{
     const {tableDataArr , tableDataArrAdd} =this.state
     let newAddArr = [...tableDataArr]; 
     let addArr = [...tableDataArrAdd];
     newAddArr.unshift(addArr[0])
-    this.setState({tableDataArr: newAddArr})  
+    this.setState({tableDataArr: newAddArr}, this.updateTable)  
   }
   handleData = (e) => {
     const { value, name } = e.target;
