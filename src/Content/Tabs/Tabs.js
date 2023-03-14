@@ -1,22 +1,39 @@
-import { useState } from "react";
-import classes from "./Tabs.module.css"
-import TabButton from "../TabsElements/TabElementButton.js"
-import TabContent from "../TabsElements/TabElementContent.js"
-import tabData from "../Constants/CatalogArray.js"
-function Tabs() {
-  const [toggleState, setToggleState] = useState(1);
+import React, { Component } from 'react';
+import classes from './Tabs.module.css';
+import TabButton from '../TabsElements/TabElementButton.js';
+import TabContent from '../TabsElements/TabElementContent.js';
+import tabData from '../Constants/CatalogArray.js';
 
-  return (
-    <div className={classes.container}>
-      <div className={classes.block}>
-      { tabData.map ((item, id) => < TabButton toggleState = {toggleState} setToggleState = {setToggleState} text = {item.text} id = {item.id} key = {id} />)}  
-      </div>
+class Tabs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleState: 1,
+    };
+    this.setToggleState = this.setToggleState.bind(this);
+  }
 
-      <div className={classes.contentTabs}>
-      { tabData.map ((item, id) => < TabContent toggleState = {toggleState} img = {item.img}  text = {item.text} id = {item.id} key = {id} />)}
+  setToggleState(id) {
+    this.setState({ toggleState: id });
+  }
+
+  render() {
+    return (
+      <div className={classes.container}>
+        <div className={classes.block}>
+          {tabData.map((item, id) => (
+            <TabButton toggleState={this.state.toggleState} setToggleState={this.setToggleState} text={item.text} id={item.id} key={id} />
+          ))}
+        </div>
+
+        <div className={classes.contentTabs}>
+          {tabData.map((item, id) => (
+            <TabContent toggleState={this.state.toggleState} img={item.img} text={item.text} id={item.id} key={id} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Tabs;
