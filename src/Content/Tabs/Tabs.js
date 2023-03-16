@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Tabs.module.css';
-import TabButton from '../TabsElements/TabElementButton.js';
-import TabContent from '../TabsElements/TabElementContent.js';
-import tabData from '../Constants/CatalogArray.js';
+import TabButton from '../TabsElements/TabElementButton';
+import TabContent from '../TabsElements/TabElementContent';
+import tabData from '../Constants/CatalogArray';
 
 class Tabs extends Component {
   constructor(props) {
@@ -14,20 +14,27 @@ class Tabs extends Component {
 
   setToggleState = (id) => {
     this.setState({ toggleState: id });
-  }
+  };
 
   render() {
+    const { toggleState } = this.state;
     return (
       <div className={classes.container}>
         <div className={classes.block}>
           {tabData.map((item, id) => (
-            <TabButton toggleState={this.state.toggleState} setToggleState={this.setToggleState} text={item.text} id={item.id} key={id} />
+            <TabButton 
+              toggleState={toggleState} 
+              setToggleState={this.setToggleState} 
+              text={item.text} 
+              id={item.id} 
+              key={id.id} 
+            />
           ))}
         </div>
 
         <div className={classes.contentTabs}>
           {tabData.map((item, id) => (
-            <TabContent toggleState={this.state.toggleState} img={item.img} text={item.text} id={item.id} key={id} />
+            <TabContent toggleState={toggleState} img={item.img} text={item.text} id={item.id} key={id.id} />
           ))}
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { Component } from 'react';
-
-import ContactsView from './ContactsView'
+import ContactsView from './ContactsView';
 
 class Contacts extends Component {
   constructor(props) {
@@ -14,9 +13,8 @@ class Contacts extends Component {
   render() {
     const { title, text } = this.state;
     return (
-      <ContactsView  title = {title} text = {text}/>
+      <ContactsView title={title} text={text} />
     );
   }    
 }
 export default Contacts;
-

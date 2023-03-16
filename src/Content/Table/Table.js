@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { Component } from 'react';
 import TableDataAdd from '../Constants/TableArrayAdd';
 import TableData from '../Constants/TableArray';
@@ -10,18 +11,17 @@ class Table extends Component {
       tableDataArr: TableData,
       tableDataArrAdd: TableDataAdd,
       isAscending: true,
-      update: { id: 0, technicalData: '' }
     };
   }
 
   handleSort = () => {
-    this.setState(({ isAscending, tableDataArr })=>{
+    this.setState(({ isAscending, tableDataArr }) => {
       const newTableDataArr = [...tableDataArr].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
-      return{ tableDataArr: newTableDataArr, isAscending: !isAscending }
-    })
-  }
+      return { tableDataArr: newTableDataArr, isAscending: !isAscending };
+    });
+  };
 
-  sortWTsort= () =>{
+  sortWTsort = () => {
     this.setState(({ isAscending, tableDataArr }) => {
       const newArr = [...tableDataArr];
       for (let i = 0; i < newArr.length - 1; i++) {
@@ -33,26 +33,27 @@ class Table extends Component {
           }
         }
       }
-      return{tableDataArr: newArr, isAscending: !isAscending}
+      return { tableDataArr: newArr, isAscending: !isAscending };
     });
-  }
-  handleDelete = (index) => {
-    this.setState(({tableDataArr}) => {
-       const newDeleteArr = [...tableDataArr];
-       newDeleteArr.splice(index, 1);
-       return { tableDataArr: newDeleteArr };
-    })
   };
 
-  handleAdd = () =>{
-    this.setState(({ tableDataArr, tableDataArrAdd }) =>{
+  handleDelete = (index) => {
+    this.setState(({ tableDataArr }) => {
+      const newDeleteArr = [...tableDataArr];
+      newDeleteArr.splice(index, 1);
+      return { tableDataArr: newDeleteArr };
+    });
+  };
+
+  handleAdd = () => {
+    this.setState(({ tableDataArr, tableDataArrAdd }) => {
       const newAddArr = [...tableDataArr]; 
       const addArr = [...tableDataArrAdd];
       newAddArr.unshift(addArr[0]);
-      return{ tableDataArr: newAddArr}    
-    })
-  }
-  /*handleData = (e) => {
+      return { tableDataArr: newAddArr };    
+    });
+  };
+  /* handleData = (e) => {
     const { value, name } = e.target;
     const { update } = this.state;
     this.setState({
@@ -69,7 +70,7 @@ class Table extends Component {
     let updateArr = [...tableDataArr]; 
     updateArr = updateArr.map((item, i) => (i === index ? { ...item, technicalData: update.technicalData } : item)); 
     this.setState({ tableDataArr: updateArr });
-  };*/
+  }; */
 
   render() {
     const { tableDataArr } = this.state;

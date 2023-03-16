@@ -16,7 +16,7 @@ function Header() {
             <p className={classes.menu}>Servises</p>
             <p className={classes.menu}>Stock</p>
             <p className={classes.menu}>Contakt Us</p>
-            <button className={classes.btn}>Login</button>
+            <button type="button" className={classes.btn}>Login</button>
           </div>
         </div>
       </div>   

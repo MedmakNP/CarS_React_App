@@ -8,7 +8,6 @@ class Intro extends Component {
     this.state = {
       title: 'The All-New Series',
       brand: 'BMW-GT',
-      introData
     };
   }
 

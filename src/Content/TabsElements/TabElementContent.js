@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import classes from './TabElem.module.css';
 
 class TabContent extends Component {
@@ -13,4 +14,11 @@ class TabContent extends Component {
     );
   }
 }
+
+TabContent.propTypes = {
+  text: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  toggleState: PropTypes.number.isRequired
+};
 export default TabContent;

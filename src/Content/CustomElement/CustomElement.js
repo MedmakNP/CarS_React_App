@@ -1,14 +1,20 @@
+import PropTypes from 'prop-types';
 import classes from './CustomElement.module.css';
 
 function CustElement(props) {
+  const { img, text } = props;
   return (
     <div className="icon">
-      <img src={props.img} className="icon-img" alt="" />
+      <img src={img} className="icon-img" alt="" />
       <p className={classes.text}> 
         {' '}
-        {props.text}
+        {text}
       </p>
     </div>
   );
 }
+CustElement.propTypes = {
+  img: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired
+};
 export default CustElement;
