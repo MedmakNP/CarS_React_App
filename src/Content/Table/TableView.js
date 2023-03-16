@@ -23,7 +23,7 @@ class TableView extends Component {
             </thead>
             <tbody>
               {tableDataArr.map((val, index) => (
-                <tr key={index} index={index}>
+                <tr  key={index} className={index % 2 === 0 ? classes.even : classes.odd} >
                   <td>{val.fullname.brand}</td>
                   <td>{val.fullname.model}</td>
                   <td>{val.maxspeed}</td>

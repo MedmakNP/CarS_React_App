@@ -15,42 +15,44 @@ class Table extends Component {
   }
 
   handleSort = () => {
-    const { isAscending, tableDataArr } = this.state;
-    const newTableDataArr = [...tableDataArr].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
-    this.setState({ tableDataArr: newTableDataArr, isAscending: !isAscending });
-  };
+    this.setState(({ isAscending, tableDataArr })=>{
+      const newTableDataArr = [...tableDataArr].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
+      return{ tableDataArr: newTableDataArr, isAscending: !isAscending }
+    })
+  }
 
-  sortWTsort = () => {
-    const { isAscending, tableDataArr } = this.state;
-    const newArr = [...tableDataArr];
-    for (let i = 0; i < newArr.length - 1; i++) {
-      for (let j = i + 1; j < newArr.length; j++) {
-        if (isAscending ? newArr[i].maxspeed > newArr[j].maxspeed : newArr[i].maxspeed < newArr[j].maxspeed) {
-          const a = newArr[i];
-          newArr[i] = newArr[j];
-          newArr[j] = a;
+  sortWTsort= () =>{
+    this.setState(({ isAscending, tableDataArr }) => {
+      const newArr = [...tableDataArr];
+      for (let i = 0; i < newArr.length - 1; i++) {
+        for (let j = i + 1; j < newArr.length; j++) {
+          if (isAscending ? newArr[i].maxspeed > newArr[j].maxspeed : newArr[i].maxspeed < newArr[j].maxspeed) {
+            const a = newArr[i];
+            newArr[i] = newArr[j];
+            newArr[j] = a;
+          }
         }
       }
-    }
-    this.setState({ tableDataArr: newArr, isAscending: !isAscending });
-  };
-
+      return{tableDataArr: newArr, isAscending: !isAscending}
+    });
+  }
   handleDelete = (index) => {
-    const { tableDataArr } = this.state;
-    const newDeleteArr = [...tableDataArr];
-    newDeleteArr.splice(index, 1);
-    this.setState({ tableDataArr: newDeleteArr }, this.updateTable);
+    this.setState(({tableDataArr}) => {
+       const newDeleteArr = [...tableDataArr];
+       newDeleteArr.splice(index, 1);
+       return { tableDataArr: newDeleteArr };
+    })
   };
 
-  handleAdd = () => {
-    const { tableDataArr, tableDataArrAdd } = this.state;
-    const newAddArr = [...tableDataArr]; 
-    const addArr = [...tableDataArrAdd];
-    newAddArr.unshift(addArr[0]);
-    this.setState({ tableDataArr: newAddArr }, this.updateTable);  
-  };
-
-  handleData = (e) => {
+  handleAdd = () =>{
+    this.setState(({ tableDataArr, tableDataArrAdd }) =>{
+      const newAddArr = [...tableDataArr]; 
+      const addArr = [...tableDataArrAdd];
+      newAddArr.unshift(addArr[0]);
+      return{ tableDataArr: newAddArr}    
+    })
+  }
+  /*handleData = (e) => {
     const { value, name } = e.target;
     const { update } = this.state;
     this.setState({
@@ -67,7 +69,7 @@ class Table extends Component {
     let updateArr = [...tableDataArr]; 
     updateArr = updateArr.map((item, i) => (i === index ? { ...item, technicalData: update.technicalData } : item)); 
     this.setState({ tableDataArr: updateArr });
-  };
+  };*/
 
   render() {
     const { tableDataArr } = this.state;

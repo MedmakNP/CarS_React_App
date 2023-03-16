@@ -10,10 +10,9 @@ class Tabs extends Component {
     this.state = {
       toggleState: 1,
     };
-    this.setToggleState = this.setToggleState.bind(this);
   }
 
-  setToggleState(id) {
+  setToggleState = (id) => {
     this.setState({ toggleState: id });
   }
 

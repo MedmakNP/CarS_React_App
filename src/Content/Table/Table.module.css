@@ -6,8 +6,8 @@
 }
 .Table{
     width: 100%;
-    height: 500px;
-    padding-left:300px ;
+    height: 900px;
+    padding-left: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,21 +16,25 @@
     
 table {
     border: 2px solid black;
-    width: 800px;
-    height: 200px;
+    width: 1200px;
+    border-collapse:collapse
   }
     
   th {
+    background-color:dimgray;
     border-bottom: 1px solid black;
-  }
+    font-size: 20px;
     
+  }
   td {
+    height: 50px;
+    font-size: 20px;
     text-align: center;
   }
   .btn {
     height: 30px;
-    width: 60px;
-    background-color: red;
+    width: 70px;
+    background-color: darkred;
     border: 1px solid black;
     border-radius: 4px;
     color: white;
@@ -38,8 +42,11 @@ table {
   .btnAdd{
     height: 30px;
     width: 60px;
-    background-color: blue;
+    background-color: rgb(81, 150, 75);
     border: 1px solid black;
     border-radius: 4px;
     color: white;
+  }
+  .even{
+    background-color:rgb(209, 209, 209);
   }
