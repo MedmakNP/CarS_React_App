@@ -22,6 +22,6 @@ TabButton.propTypes = {
   text: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   toggleState: PropTypes.number.isRequired,
-  setToggleState: PropTypes.number.isRequired,
+  setToggleState: PropTypes.func.isRequired,
 };
 export default TabButton;

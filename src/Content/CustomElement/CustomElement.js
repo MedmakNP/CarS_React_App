@@ -14,7 +14,7 @@ function CustElement(props) {
   );
 }
 CustElement.propTypes = {
-  img: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired
 };
 export default CustElement;

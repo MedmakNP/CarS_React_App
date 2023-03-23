@@ -19,7 +19,7 @@ class IntroView extends Component {
           <div className={classes.wrap}>
             <div className={classes.search}>
               <div className={classes.elemWrap}>
-                { introData.map((item, index) => <SearchElement texts={item.texts} key={index.id} />)}
+                { introData.map((item,) => <SearchElement texts={item.texts} key={item.id} />)}
                 <button type="button" className={classes.btn}>Search Now</button> 
               </div>                       
             </div>

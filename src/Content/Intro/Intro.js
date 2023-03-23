@@ -7,7 +7,7 @@ class Intro extends Component {
     super(props);
     this.state = {
       title: 'The All-New Series',
-      brand: 'BMW-GT',
+      brand: 'BMW-GT'
     };
   }
 

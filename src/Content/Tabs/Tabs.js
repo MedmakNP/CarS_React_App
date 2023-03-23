@@ -21,20 +21,20 @@ class Tabs extends Component {
     return (
       <div className={classes.container}>
         <div className={classes.block}>
-          {tabData.map((item, id) => (
+          {tabData.map((item) => (
             <TabButton 
               toggleState={toggleState} 
               setToggleState={this.setToggleState} 
               text={item.text} 
               id={item.id} 
-              key={id.id} 
+              key={item.id} 
             />
           ))}
         </div>
 
         <div className={classes.contentTabs}>
-          {tabData.map((item, id) => (
-            <TabContent toggleState={toggleState} img={item.img} text={item.text} id={item.id} key={id.id} />
+          {tabData.map((item) => (
+            <TabContent toggleState={toggleState} img={item.img} text={item.text} id={item.id} key={item.id} />
           ))}
         </div>
       </div>

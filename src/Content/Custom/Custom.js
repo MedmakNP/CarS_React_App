@@ -12,23 +12,23 @@ function Custom() {
           <div className={classes.wrap}>
             <div className={`${classes.wrapper} ${classes.n1}`}>
               { iconData.slice(0, 2).map(
-                (item, index) => <CustElement img={item.img} text={item.text} key={index.id} />
+                (item) => <CustElement img={item.img} text={item.text} key={item.id} />
               )}
             </div>
             <div className={`${classes.wrapper} ${classes.n2}`}>
               { iconData.slice(2, 4).map(
-                (item, index) => <CustElement img={item.img} text={item.text} key={index.id} />
+                (item) => <CustElement img={item.img} text={item.text} key={item.id} />
               )}
             </div>
             <div className={`${classes.wrapper} ${classes.n1}`}>
               { iconData.slice(4, 6).map(
-                (item, index) => <CustElement img={item.img} text={item.text} key={index.id} />
+                (item) => <CustElement img={item.img} text={item.text} key={item.id} />
               )}                  
             </div>
           </div>
           <div className={classes.moreIcon}>
             { iconData.slice(6).map(
-              (item, index) => <CustElement img={item.img} text={item.text} key={index.id} />
+              (item) => <CustElement img={item.img} text={item.text} key={item.id} />
             )}                 
           </div>
         </div>
