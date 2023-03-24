@@ -16,6 +16,6 @@ class Intro extends Component {
     return (
       <IntroView introData={introData} brand={brand} title={title} />
     );
-  } 
+  }
 }
 export default Intro;

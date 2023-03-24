@@ -14,7 +14,7 @@ function Table() {
   const [fullArr, setFullArr] = useState(TableData);
   const [editing, setEditing] = useState(false);
   const [activeElem, setActiveElem] = useState(-1);
-  const [nameInput, setNameInput] = useState('more text');
+  const [nameInput, setNameInput] = useState(TableData);
   const [editingIndex, setEditingIndex] = useState(-1);
   const [currentRow, setCurrentRow] = useState(null);
  
@@ -33,39 +33,28 @@ function Table() {
   const dragStartHandle = (row) => {
     setCurrentRow(row);
   };
-  console.log(row);
 
   const dragLeaveHandle = () => {
-
   };
 
   const dragOverHandle = (e) => {
     e.preventDefault();
   };
 
-  const changeOrder = (item, row) => {
-    if (item && item.order === row.order) {
+  const changeOrder = (item, val) => {
+    if (item.order === val.order) {
       return { ...item, order: currentRow.order };
     } if (item.order === currentRow.order) {
-      return { ...item, order: row.order };
+      return { ...item, order: val.order };
     }
-
     return item;
   };
 
-  const dragDropHandle = (e, row) => {
+  const dragDropHandle = (e, val) => {
     e.preventDefault();
-    setArr((prev) => [...prev.map((item) => changeOrder(item, row))].sort((a, b) => ((a.id > b.id) ? 1 : -1)));
+    setArr((prev) => [...prev.map((item) => changeOrder(item, val))].sort((a, b) => ((a.id > b.id) ? 1 : -1)));
     setActiveElem(-1);
   };
-  const sortRows = (a, b) => {
-    if (a.order > b.order) {
-      return 1;
-    } else { 
-      return -1;    
-    }  
-  };
-
   const handleActiveElem = (index) => {
     setActiveElem(index);
   }; 
@@ -135,7 +124,6 @@ function Table() {
       dragStartHandle={dragStartHandle}
       dragLeaveHandle={dragLeaveHandle}
       dragOverHandle={dragOverHandle}
-      sortRows={sortRows}
     />
   );
 }

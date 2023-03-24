@@ -2,15 +2,16 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from 'prop-types';
 import classes from './Table.module.css';
+import ImageLoader from '../ImageLoader/ImageLoader';
 
 function TableView({
   tableDataArr, handleSort, sortWTsort, handleDelete, handleAdd,
   editing, setNameInput, nameInput, handleSaveClick, editingIndex, setEditingIndex, handleSetEditingIndex,
   activeIndex, handleActiveElem, activeElem, dragStartHandle, dragLeaveHandle, dragDropHandle, dragOverHandle,
-  row,
 }) {
   return (
     <div className={classes.Table}>
+      <ImageLoader />
       <div className={classes.container}>
         <table>
           <thead>
@@ -27,15 +28,15 @@ function TableView({
             </tr>
           </thead>
           <tbody>
-            {tableDataArr.map((val, index) => (
+            {tableDataArr.sort((a, b) => (a.order > b.order ? 1 : -1)).map((val, index) => (
               <tr 
                 key={val.id} 
                 className={index === activeIndex ? classes.activeRow : classes.odd}
                 draggable
-                onDragStart={(e) => dragStartHandle(e, row)}
+                onDragStart={(e) => dragStartHandle(e, val)}
                 onDragLeave={(e) => dragLeaveHandle(e)}
                 onDragOver={(e) => dragOverHandle(e, index)}
-                onDrop={(e) => dragDropHandle(e, row)}
+                onDrop={(e) => dragDropHandle(e, val)}
               >
                 <td 
                   onClick={() => handleActiveElem(index)} 
@@ -105,7 +106,6 @@ TableView.propTypes = {
   dragStartHandle: PropTypes.func.isRequired,
   dragLeaveHandle: PropTypes.func.isRequired,
   dragOverHandle: PropTypes.func.isRequired,
-  row: PropTypes.shape({}).isRequired,
 };
 
 export default TableView;
