@@ -6,7 +6,8 @@
 }
 .Table{
     width: 100%;
-    height: 900px;
+    padding-top: 50px;
+    height: 500px;
     padding-left: 100px;
 }
 

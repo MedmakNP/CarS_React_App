@@ -6,6 +6,8 @@ import Custom from './Content/Custom/Custom';
 import Contacts from './Content/Contacts/Contacts';
 import Footer from './Content/Footer/Footer';
 import Table from './Content/Table/Table';
+import ApiList from './Content/ApiList/ApiList';
+import ImageLoader from './Content/ImageLoader/ImageLoader';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       <Services />
       <Catalog />
       <Custom />
+      <ImageLoader />
       <Table />
+      <ApiList />
       <Contacts />
       <Footer />
 

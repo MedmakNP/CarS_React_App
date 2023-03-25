@@ -2,24 +2,23 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from 'prop-types';
 import classes from './Table.module.css';
-import ImageLoader from '../ImageLoader/ImageLoader';
 
 function TableView({
   tableDataArr, handleSort, sortWTsort, handleDelete, handleAdd,
   editing, setNameInput, nameInput, handleSaveClick, editingIndex, setEditingIndex, handleSetEditingIndex,
   activeIndex, handleActiveElem, activeElem, dragStartHandle, dragLeaveHandle, dragDropHandle, dragOverHandle,
+  flagSorting, setSorting,
 }) {
   return (
     <div className={classes.Table}>
-      <ImageLoader />
       <div className={classes.container}>
         <table>
           <thead>
             <tr>
               <th>Brand</th>
               <th>Model</th>
-              <th onClick={sortWTsort}>Max Speed(WTsort)</th>
-              <th onClick={handleSort}>Price(sort)</th>
+              <th onClick={() => { sortWTsort(); setSorting(); }}>Max Speed(WTsort)</th>
+              <th onClick={() => { handleSort(); setSorting(); }}>Price(sort)</th>
               <th>Technical Data</th>
               <th> 
                 <button type="button" className={classes.btnAdd} onClick={handleAdd}> Add </button> 
@@ -28,7 +27,57 @@ function TableView({
             </tr>
           </thead>
           <tbody>
-            {tableDataArr.sort((a, b) => (a.order > b.order ? 1 : -1)).map((val, index) => (
+            { flagSorting ? tableDataArr.map((val, index) => (
+              <tr 
+                key={val.id} 
+                className={index === activeIndex ? classes.activeRow : classes.odd}
+                draggable
+                onDragStart={(e) => dragStartHandle(e, val)}
+                onDragLeave={(e) => dragLeaveHandle(e)}
+                onDragOver={(e) => dragOverHandle(e, index)}
+                onDrop={(e) => dragDropHandle(e, val)}
+              >
+                <td 
+                  onClick={() => handleActiveElem(index)} 
+                  className={index === activeElem ? classes.activeElem : ''}
+                >
+                  {val.fullname.brand}
+                </td>
+                <td>{val.fullname.model}</td>
+                <td>{val.maxspeed}</td>
+                <td>{val.price}</td>
+                <td>
+                  {editing && index === editingIndex ? (
+                    <input
+                      type="text" 
+                      value={nameInput} 
+                      onChange={(e) => setNameInput(e.target.value,)}
+                    />
+                  ) : val.technicalData}
+
+                </td>
+                <td>
+                  <button type="button" className={classes.btn} onClick={() => handleDelete(index)}>DELETE</button>
+                </td> 
+                <td>
+                  {index === editingIndex ? (
+                    <button
+                      type="button"
+                      className={classes.btn}
+                      onClick={() => {
+                        handleSaveClick(index);
+                        setEditingIndex(-1);
+                      }}
+                    >
+                      Save
+                    </button>
+                  ) : (
+                    <button type="button" onClick={() => handleSetEditingIndex(index)}>Edit</button>
+                  )}
+
+                </td>                
+              </tr>
+            )) : tableDataArr.sort((a, b) => (a.order > b.order ? 1 : -1)).map((val, index) => (
               <tr 
                 key={val.id} 
                 className={index === activeIndex ? classes.activeRow : classes.odd}
@@ -106,6 +155,8 @@ TableView.propTypes = {
   dragStartHandle: PropTypes.func.isRequired,
   dragLeaveHandle: PropTypes.func.isRequired,
   dragOverHandle: PropTypes.func.isRequired,
+  flagSorting: PropTypes.bool.isRequired,
+  setSorting: PropTypes.func.isRequired,
 };
 
 export default TableView;

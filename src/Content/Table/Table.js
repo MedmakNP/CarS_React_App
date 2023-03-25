@@ -17,6 +17,7 @@ function Table() {
   const [nameInput, setNameInput] = useState(TableData);
   const [editingIndex, setEditingIndex] = useState(-1);
   const [currentRow, setCurrentRow] = useState(null);
+  const [flagSorting, setFlagSorting] = useState(true);
  
   // Незнаю чому але useEffect викликається 2 раза
 
@@ -30,11 +31,12 @@ function Table() {
     });
   }, []);
 
-  const dragStartHandle = (row) => {
-    setCurrentRow(row);
+  const dragStartHandle = (e, val) => {
+    setCurrentRow(val);
   };
 
   const dragLeaveHandle = () => {
+    setFlagSorting(false);
   };
 
   const dragOverHandle = (e) => {
@@ -52,8 +54,8 @@ function Table() {
 
   const dragDropHandle = (e, val) => {
     e.preventDefault();
-    setArr((prev) => [...prev.map((item) => changeOrder(item, val))].sort((a, b) => ((a.id > b.id) ? 1 : -1)));
-    setActiveElem(-1);
+    setArr((prev) => [...prev.map((item) => changeOrder(item, val))]);
+    setFlagSorting(false);
   };
   const handleActiveElem = (index) => {
     setActiveElem(index);
@@ -67,15 +69,17 @@ function Table() {
     setEditingIndex(index);
     setEditing(true);
   };
-
+  const handleFlagSorting = () => {
+    setFlagSorting(true);
+  };
   const handleSort = () => { 
-    const newArr = [...fullArr].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
+    const newArr = [...arr].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
     setArr(newArr);
     setIsAscending((prev) => !prev);
   };
   
   const sortWTsort = () => {
-    const newArr = [...fullArr];
+    const newArr = [...arr];
     for (let i = 0; i < newArr.length - 1; i++) {
       for (let j = i + 1; j < newArr.length; j++) {
         if (isAscending ? newArr[i].maxspeed > newArr[j].maxspeed : newArr[i].maxspeed < newArr[j].maxspeed) {
@@ -124,6 +128,8 @@ function Table() {
       dragStartHandle={dragStartHandle}
       dragLeaveHandle={dragLeaveHandle}
       dragOverHandle={dragOverHandle}
+      flagSorting={flagSorting}
+      setSorting={handleFlagSorting}
     />
   );
 }
