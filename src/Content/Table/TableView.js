@@ -1,13 +1,12 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from 'prop-types';
 import classes from './Table.module.css';
 
 function TableView({
-  tableDataArr, handleSort, sortWTsort, handleDelete, handleAdd,
+  handleSort, sortWTsort, handleDelete, handleAdd,
   editing, setNameInput, nameInput, handleSaveClick, editingIndex, setEditingIndex, handleSetEditingIndex,
   activeIndex, handleActiveElem, activeElem, dragStartHandle, dragLeaveHandle, dragDropHandle, dragOverHandle,
-  flagSorting, setSorting,
+  sortedData, setSorting,
 }) {
   return (
     <div className={classes.Table}>
@@ -23,11 +22,11 @@ function TableView({
               <th> 
                 <button type="button" className={classes.btnAdd} onClick={handleAdd}> Add </button> 
               </th>
-                
+              <th>Edit</th>  
             </tr>
           </thead>
           <tbody>
-            { flagSorting ? tableDataArr.map((val, index) => (
+            { sortedData.map((val, index) => (
               <tr 
                 key={val.id} 
                 className={index === activeIndex ? classes.activeRow : classes.odd}
@@ -38,7 +37,8 @@ function TableView({
                 onDrop={(e) => dragDropHandle(e, val)}
               >
                 <td 
-                  onClick={() => handleActiveElem(index)} 
+                  onClick={() => handleActiveElem(index)}
+                  onKeyDown={0} 
                   className={index === activeElem ? classes.activeElem : ''}
                 >
                   {val.fullname.brand}
@@ -72,57 +72,9 @@ function TableView({
                       Save
                     </button>
                   ) : (
-                    <button type="button" onClick={() => handleSetEditingIndex(index)}>Edit</button>
-                  )}
-
-                </td>                
-              </tr>
-            )) : tableDataArr.sort((a, b) => (a.order > b.order ? 1 : -1)).map((val, index) => (
-              <tr 
-                key={val.id} 
-                className={index === activeIndex ? classes.activeRow : classes.odd}
-                draggable
-                onDragStart={(e) => dragStartHandle(e, val)}
-                onDragLeave={(e) => dragLeaveHandle(e)}
-                onDragOver={(e) => dragOverHandle(e, index)}
-                onDrop={(e) => dragDropHandle(e, val)}
-              >
-                <td 
-                  onClick={() => handleActiveElem(index)} 
-                  className={index === activeElem ? classes.activeElem : ''}
-                >
-                  {val.fullname.brand}
-                </td>
-                <td>{val.fullname.model}</td>
-                <td>{val.maxspeed}</td>
-                <td>{val.price}</td>
-                <td>
-                  {editing && index === editingIndex ? (
-                    <input
-                      type="text" 
-                      value={nameInput} 
-                      onChange={(e) => setNameInput(e.target.value,)}
-                    />
-                  ) : val.technicalData}
-
-                </td>
-                <td>
-                  <button type="button" className={classes.btn} onClick={() => handleDelete(index)}>DELETE</button>
-                </td> 
-                <td>
-                  {index === editingIndex ? (
-                    <button
-                      type="button"
-                      className={classes.btn}
-                      onClick={() => {
-                        handleSaveClick(index);
-                        setEditingIndex(-1);
-                      }}
-                    >
-                      Save
+                    <button type="button" className={classes.btn} onClick={() => handleSetEditingIndex(index)}>
+                      Edit
                     </button>
-                  ) : (
-                    <button type="button" onClick={() => handleSetEditingIndex(index)}>Edit</button>
                   )}
 
                 </td>                
@@ -134,10 +86,9 @@ function TableView({
     </div>      
   );
 }
-
 TableView.propTypes = {
   handleDelete: PropTypes.func.isRequired,
-  tableDataArr: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  sortedData: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   handleSort: PropTypes.func.isRequired,
   sortWTsort: PropTypes.func.isRequired,
   handleAdd: PropTypes.func.isRequired,
@@ -155,7 +106,6 @@ TableView.propTypes = {
   dragStartHandle: PropTypes.func.isRequired,
   dragLeaveHandle: PropTypes.func.isRequired,
   dragOverHandle: PropTypes.func.isRequired,
-  flagSorting: PropTypes.bool.isRequired,
   setSorting: PropTypes.func.isRequired,
 };
 

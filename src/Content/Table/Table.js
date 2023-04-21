@@ -1,6 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-undef */
-/* eslint-disable no-plusplus */
 import { useState, useEffect } from 'react';
 import TableDataAdd from '../Constants/TableArrayAdd';
 import TableData from '../Constants/TableArray';
@@ -80,8 +77,8 @@ function Table() {
   
   const sortWTsort = () => {
     const newArr = [...arr];
-    for (let i = 0; i < newArr.length - 1; i++) {
-      for (let j = i + 1; j < newArr.length; j++) {
+    for (let i = 0; i < newArr.length - 1; i += 1) {
+      for (let j = i + 1; j < newArr.length; j += 1) {
         if (isAscending ? newArr[i].maxspeed > newArr[j].maxspeed : newArr[i].maxspeed < newArr[j].maxspeed) {
           const a = newArr[i];
           newArr[i] = newArr[j];
@@ -106,9 +103,12 @@ function Table() {
     newAddArr.unshift(addArr[0]);
     setArr(newAddArr); 
   };
-  
+  const sortedData = flagSorting
+    ? arr
+    : [...arr].sort((a, b) => (a.order > b.order ? 1 : -1));
   return (
     <TableView
+      sortedData={sortedData}
       tableDataArr={arr}
       activeIndex={activeIndex}
       handleSort={handleSort}
