@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classes from './Header.module.css';
-import logo from '../Images/logo.png';
+import logo from '../../assets/Images/logo.png';
 
 function HeaderView({ navigation }) {
   return (

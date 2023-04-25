@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import introData from '../Constants/IntroArray';
+import introData from '../../Api/IntroArray';
 import IntroView from './IntroView';
 
 class Intro extends Component {

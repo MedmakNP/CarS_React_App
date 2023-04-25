@@ -1,7 +1,7 @@
 import classes from './Services.module.css';
-import service1 from '../Images/service1.png';
-import service2 from '../Images/service2.png';
-import service3 from '../Images/service3.png';
+import service1 from '../../assets/Images/service1.png';
+import service2 from '../../assets/Images/service2.png';
+import service3 from '../../assets/Images/service3.png';
 
 function Services() {
   return (

@@ -1,5 +1,5 @@
 import classes from './Custom.module.css';
-import iconData from '../Constants/CustomArray';
+import iconData from '../../Api/CustomArray';
 import CustElement from '../CustomElement/CustomElement';
 
 function Custom() {

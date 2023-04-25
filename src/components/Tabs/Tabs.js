@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './Tabs.module.css';
 import TabButton from '../TabsElements/TabElementButton';
 import TabContent from '../TabsElements/TabElementContent';
-import tabData from '../Constants/CatalogArray';
+import tabData from '../../Api/CatalogArray';
 
 class Tabs extends Component {
   constructor(props) {

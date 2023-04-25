@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import classes from './Contacts.module.css';
-import logo from '../Images/logo.png';
-import telephone from '../Images/telephone.png';
-import placeholder from '../Images/placeholder.png';
-import mail from '../Images/mail.png';
-import linkedin from '../Images/linkedin.png';
-import instagram from '../Images/instagram.png';
-import facebook from '../Images/facebook.png';
-import twitter from '../Images/twitter.png';
+import logo from '../../assets/Images/logo.png';
+import telephone from '../../assets/Images/telephone.png';
+import placeholder from '../../assets/Images/placeholder.png';
+import mail from '../../assets/Images/mail.png';
+import linkedin from '../../assets/Images/linkedin.png';
+import instagram from '../../assets/Images/instagram.png';
+import facebook from '../../assets/Images/facebook.png';
+import twitter from '../../assets/Images/twitter.png';
 
 class ContactsView extends Component {
   render() {

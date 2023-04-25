@@ -1,8 +1,8 @@
-import TataNexon from '../Images/Tata-Nexon.jpg';
-import Porsche from '../Images/Porsche.png';
-import rangeRoverSport from '../Images/range-rover-sport.jpg';
-import MercedesBenz from '../Images/Mercedes-Benz.jpg';
-import THAR from '../Images/THAR.png';
+import TataNexon from '../assets/Images/Tata-Nexon.jpg';
+import Porsche from '../assets/Images/Porsche.png';
+import rangeRoverSport from '../assets/Images/range-rover-sport.jpg';
+import MercedesBenz from '../assets/Images/Mercedes-Benz.jpg';
+import THAR from '../assets/Images/THAR.png';
 
 const tabData = [
   { text: 'Porshe', id: 1, img: Porsche },

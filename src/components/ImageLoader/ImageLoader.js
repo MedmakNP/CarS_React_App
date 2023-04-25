@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Back from '../Images/Back.png';
+import Back from '../../assets/Images/Back.png';
 import classes from './ImageLoader.module.css';
 
 function ImageLoader() {

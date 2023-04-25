@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import TableDataAdd from '../Constants/TableArrayAdd';
-import TableData from '../Constants/TableArray';
+import TableDataAdd from '../../Api/TableArrayAdd';
+import TableData from '../../Api/TableArray';
 import TableView from './TableView';
 
 function Table() {

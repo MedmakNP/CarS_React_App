@@ -1,13 +1,14 @@
-import WrappedHeader from './Content/Header/Hoc';
-import Intro from './Content/Intro/Intro';
-import Services from './Content/Services/Services';
-import Catalog from './Content/Catalog/Catalog';
-import Custom from './Content/Custom/Custom';
-import Contacts from './Content/Contacts/Contacts';
-import Footer from './Content/Footer/Footer';
-import Table from './Content/Table/Table';
-import ApiList from './Content/ApiList/ApiList';
-import ImageLoader from './Content/ImageLoader/ImageLoader';
+import WrappedHeader from './components/Header/Hoc';
+import Intro from './components/Intro/Intro';
+import Services from './components/Services/Services';
+import Catalog from './components/Catalog/Catalog';
+import Custom from './components/Custom/Custom';
+import Contacts from './components/Contacts/Contacts';
+import Footer from './components/Footer/Footer';
+import Table from './components/Table/Table';
+import ApiList from './components/ApiList/ApiList';
+import ImageLoader from './components/ImageLoader/ImageLoader';
+// import { DarkModeProvider } from './Content/Context/ContextTheme';
 
 function App() {
   return (
@@ -22,9 +23,7 @@ function App() {
       <ApiList />
       <Contacts />
       <Footer />
-
     </div>
-   
   );
 }
 
