@@ -38,7 +38,7 @@ function TableView({
               >
                 <td 
                   onClick={() => handleActiveElem(index)}
-                  onKeyDown={0} 
+                  onKeyDown={() => {}} 
                   className={index === activeElem ? classes.activeElem : ''}
                 >
                   {val.fullname.brand}

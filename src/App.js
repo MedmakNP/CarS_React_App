@@ -1,4 +1,4 @@
-import Header from './Content/Header/Header';
+import WrappedHeader from './Content/Header/Hoc';
 import Intro from './Content/Intro/Intro';
 import Services from './Content/Services/Services';
 import Catalog from './Content/Catalog/Catalog';
@@ -12,7 +12,7 @@ import ImageLoader from './Content/ImageLoader/ImageLoader';
 function App() {
   return (
     <div>
-      <Header />
+      <WrappedHeader />
       <Intro />
       <Services />
       <Catalog />
