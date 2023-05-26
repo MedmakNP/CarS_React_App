@@ -8,21 +8,26 @@ import Footer from './components/Footer/Footer';
 import Table from './components/Table/Table';
 import ApiList from './components/ApiList/ApiList';
 import ImageLoader from './components/ImageLoader/ImageLoader';
-// import { DarkModeProvider } from './Content/Context/ContextTheme';
+import ThemeProvider from './Provider/ThemeProvider';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <div>
-      <WrappedHeader />
-      <Intro />
-      <Services />
-      <Catalog />
-      <Custom />
-      <ImageLoader />
-      <Table />
-      <ApiList />
-      <Contacts />
-      <Footer />
+      <ThemeProvider>
+        <Layout>
+          <WrappedHeader />
+          <Intro />
+          <Services />
+          <Catalog />
+          <Custom />
+          <ImageLoader />
+          <Table />
+          <ApiList />
+          <Contacts />
+          <Footer />
+        </Layout>
+      </ThemeProvider>
     </div>
   );
 }

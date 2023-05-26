@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import classes from './Header.module.css';
 import logo from '../../assets/Images/logo.png';
+import { ThemeContext } from '../../Provider/ThemeProvider';
 
 function HeaderView({ navigation }) {
+  const { toggleTheme } = useContext(ThemeContext);
+  console.log(toggleTheme);
   return (
     <div className={classes.header}>
       <div className={classes.container}>
@@ -10,6 +14,7 @@ function HeaderView({ navigation }) {
           <div className={classes.wrap}>
             <img src={logo} className={classes.logo} alt="logo" />
             <p className={classes.title}>CarS</p>
+            <button type="button" className={classes.btn} onClick={toggleTheme}>Change theme</button>
           </div>
           <div className={classes.hotBar}>
             <a href="#home" className={classes.menu} onClick={() => navigation(0)}>Home</a>

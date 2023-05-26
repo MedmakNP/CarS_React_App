@@ -33,15 +33,24 @@
     width: 200px;
     height: 200px;
 }
-.color1{
-    background: #F0F9FF;
+.color1-light{
+    background:rgba(240, 249, 255, 1);
 }
-.color2{
+.color2-light{
 
-    background: #F3FBF4;
+    background: 	rgba(243, 251, 244, 1);
 }
-.color3{
-    background: #FFF4F3;
+.color3-light{
+    background: rgb(255, 244, 243);
+}
+.color1-dark{
+    background:rgba(1, 47, 78, 0.15);
+}
+.color2-dark{
+    background:rgba(2, 90, 14, 0.15);
+}
+.color3-dark{
+    background: rgba(100, 10, 2, 0.15);
 }
 .text{
     font-style: normal;

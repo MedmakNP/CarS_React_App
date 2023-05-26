@@ -4,8 +4,9 @@ function Header() {
   const navigation = (offset) => {
     window.scrollTo(0, offset);
   };
+
   return (
-    <HeaderView 
+    <HeaderView
       navigation={navigation}
     />
   );

@@ -5,10 +5,17 @@
     align-items: center;
     width: 230px;
     height: 55px;
-    background: #F3F3F3;
-    border: 1.5px solid #EBEBEB;
     border-radius: 6.5px;
 }
+.light{
+    background-color: white;
+    border: 1.5px solid #EBEBEB; 
+}
+.dark{
+    background-color: var(--bg-dark);
+    border:1.5px solid #222020;
+}
+
 .arrow{
     margin-right: 25px;
     width: 10px;
