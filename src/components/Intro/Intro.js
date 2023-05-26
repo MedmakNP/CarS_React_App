@@ -1,21 +1,14 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import introData from '../../Api/IntroArray';
 import IntroView from './IntroView';
 
-class Intro extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'The All-New Series',
-      brand: 'BMW-GT'
-    };
-  }
+function Intro() {
+  const [title] = useState('The All-New Series');
+  const [brand] = useState('BMW-GT');
 
-  render() {
-    const { brand, title } = this.state;
-    return (
-      <IntroView introData={introData} brand={brand} title={title} />
-    );
-  }
+  return (
+    <IntroView introData={introData} brand={brand} title={title} />
+  );
 }
+
 export default Intro;

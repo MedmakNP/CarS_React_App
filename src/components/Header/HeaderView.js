@@ -6,7 +6,6 @@ import { ThemeContext } from '../../Provider/ThemeProvider';
 
 function HeaderView({ navigation }) {
   const { toggleTheme } = useContext(ThemeContext);
-  console.log(toggleTheme);
   return (
     <div className={classes.header}>
       <div className={classes.container}>
