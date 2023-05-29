@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import classes from './Table.module.css';
 
 function TableView({
@@ -8,21 +9,23 @@ function TableView({
   activeIndex, handleActiveElem, activeElem, dragStartHandle, dragLeaveHandle, dragDropHandle, dragOverHandle,
   sortedData, setSorting,
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.Table}>
       <div className={classes.container}>
         <table>
           <thead>
             <tr>
-              <th>Brand</th>
-              <th>Model</th>
-              <th onClick={() => { sortWTsort(); setSorting(); }}>Max Speed(WTsort)</th>
-              <th onClick={() => { handleSort(); setSorting(); }}>Price(sort)</th>
-              <th>Technical Data</th>
+              <th>{t('table.brand')}</th>
+              <th>{t('table.model')}</th>
+              <th onClick={() => { sortWTsort(); setSorting(); }}>{t('table.maxSpeed')}</th>
+              <th onClick={() => { handleSort(); setSorting(); }}>{t('table.price')}</th>
+              <th>{t('table.technicalData')}</th>
               <th> 
-                <button type="button" className={classes.btnAdd} onClick={handleAdd}> Add </button> 
+                <button type="button" className={classes.btnAdd} onClick={handleAdd}>{t('table.add')}</button> 
               </th>
-              <th>Edit</th>  
+              <th>{t('table.edit')}</th>  
             </tr>
           </thead>
           <tbody>
@@ -57,7 +60,9 @@ function TableView({
 
                 </td>
                 <td>
-                  <button type="button" className={classes.btn} onClick={() => handleDelete(index)}>DELETE</button>
+                  <button type="button" className={classes.btn} onClick={() => handleDelete(index)}>
+                    {t('table.del')}
+                  </button>
                 </td> 
                 <td>
                   {index === editingIndex ? (
@@ -69,11 +74,11 @@ function TableView({
                         setEditingIndex(-1);
                       }}
                     >
-                      Save
+                      {t('table.save')}
                     </button>
                   ) : (
                     <button type="button" className={classes.btn} onClick={() => handleSetEditingIndex(index)}>
-                      Edit
+                      {t('table.edit')}
                     </button>
                   )}
 

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import classes from './Contacts.module.css';
 import logo from '../../assets/Images/logo.png';
 import telephone from '../../assets/Images/telephone.png';
@@ -10,6 +11,8 @@ import facebook from '../../assets/Images/facebook.png';
 import twitter from '../../assets/Images/twitter.png';
 
 function ContactsView({ title, text }) {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.contacts}>
       <div className={classes.container}>
@@ -19,7 +22,7 @@ function ContactsView({ title, text }) {
             <p className={classes.logoTitle}>CarS</p>
           </div>
           <div className={classes.inner}>
-            <p className={classes.title}>Nazar Panchenko</p>
+            <p className={classes.title}>{t('contacts.name')}</p>
             <a href="https://github.com/MedmakNP/test123" className={classes.link}>
               https://github.com/MedmakNP/test123
             </a>
@@ -35,19 +38,19 @@ function ContactsView({ title, text }) {
         </div> 
         <div className={classes.wrap}>
           <div className={classes.element}>
-            <p className={classes.title}>Services</p>
-            <p className={classes.text}>Car Services</p>
-            <p className={classes.text}>Buy Car </p>
-            <p className={classes.text}>Sell Car</p>
-            <p className={classes.text}>Washing Car</p>
+            <p className={classes.title}>{t('contacts.servises.title')}</p>
+            <p className={classes.text}>{t('contacts.servises.carServices')}</p>
+            <p className={classes.text}>{t('contacts.servises.buyCar')}</p>
+            <p className={classes.text}>{t('contacts.servises.sellCar')}</p>
+            <p className={classes.text}>{t('contacts.servises.washingCar')}</p>
           </div>
           <div className={classes.element}>
-            <p className={classes.title}>COMPANY</p>
-            <p className={classes.text}>About Us</p>
-            <p className={classes.text}>Careers</p>
-            <p className={classes.text}>Press</p>
-            <p className={classes.text}>Blog</p>
-            <p className={classes.text}>Sustainability</p>
+            <p className={classes.title}>{t('contacts.company.title')}</p>
+            <p className={classes.text}>{t('contacts.company.aboutUs')}</p>
+            <p className={classes.text}>{t('contacts.company.careers')}</p>
+            <p className={classes.text}>{t('contacts.company.press')}</p>
+            <p className={classes.text}>{t('contacts.company.blog')}</p>
+            <p className={classes.text}>{t('contacts.company.sustainability')}</p>
           </div>
           <div className={classes.element}>
             <p className={classes.title}>Contact Us</p>

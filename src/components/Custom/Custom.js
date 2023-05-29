@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import classes from './Custom.module.css';
 import iconData from '../../Api/CustomArray';
 import CustElement from '../CustomElement/CustomElement';
 
 function Custom() {
+  const { t } = useTranslation();
+
   return ( 
        
     <div className={classes.custom}>
       <div className={classes.container}>
-        <p className={classes.title}>Best Customer Experience</p>
+        <p className={classes.title}>{t('custom.title')}</p>
         <div className={classes.inner}>
           <div className={classes.wrap}>
             <div className={`${classes.wrapper} ${classes.n1}`}>

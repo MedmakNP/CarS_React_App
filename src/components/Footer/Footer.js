@@ -1,11 +1,12 @@
+import { useTranslation } from 'react-i18next';
 import classes from './Footer.module.css';
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className={classes.footer}>
-      <p className={classes.text}>
-        © Copyright 2022 carZ. All rights reserved. Various trademarks held by their respective owners.
-      </p>
+      <p className={classes.text}>{t('footer.title')}</p>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import introData from '../../Api/IntroArray';
 import IntroView from './IntroView';
 
 function Intro() {
-  const [title] = useState('The All-New Series');
+  const [title] = useState('intro.title');
   const [brand] = useState('BMW-GT');
 
   return (

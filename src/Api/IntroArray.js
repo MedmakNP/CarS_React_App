@@ -1,7 +1,7 @@
 const introData = [
-  { texts: 'Location', id: 1 },
-  { texts: 'Brand Name', id: 2 },
-  { texts: 'Select Type', id: 3 },
-  { texts: 'Select Models', id: 4 }
+  { texts: 'intro.introData.location', id: 1 },
+  { texts: 'intro.introData.brandName', id: 2 },
+  { texts: 'intro.introData.selectType', id: 3 },
+  { texts: 'intro.introData.selectModels', id: 4 }
 ];
 export default introData;

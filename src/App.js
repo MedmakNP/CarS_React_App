@@ -10,6 +10,7 @@ import ApiList from './components/ApiList/ApiList';
 import ImageLoader from './components/ImageLoader/ImageLoader';
 import ThemeProvider from './Provider/ThemeProvider';
 import Layout from './components/Layout/Layout';
+import './i18n';
 
 function App() {
   return (

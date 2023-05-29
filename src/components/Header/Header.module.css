@@ -9,7 +9,7 @@ body {
 {
     height:100%;
     width:100%;
-    max-width: 1440px;
+    max-width: 1640px;
     margin:0 auto;
 }
 .header{
@@ -55,11 +55,25 @@ body {
   text-decoration: none;
 }
 .btn{
+  margin: 10px;
   color: white;
   width: 120px;
   height: 40px;
   background: #850000;
   border-radius: 6px;
+}
+.btnLng{
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+}
+.btnLngR{
+  padding-left: 30px;
+  border-right: solid 1px white;
+  border-radius: 0px;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
 }
 .menu:hover{
   text-decoration-line: underline;

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import classes from './ApiList.module.css';
 
 function ApiList() {
   const [users, setUsers] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,12 +26,12 @@ function ApiList() {
         <table>
           <thead>
             <tr>
-              <th>Picture</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>City</th>
-              <th>Country</th>
+              <th>{t('tableApi.img')}</th>
+              <th>{t('tableApi.name')}</th>
+              <th>{t('tableApi.email')}</th>
+              <th>{t('tableApi.age')}</th>
+              <th>{t('tableApi.city')}</th>
+              <th>{t('tableApi.country')}</th>
             </tr>
           </thead>
           <tbody>
